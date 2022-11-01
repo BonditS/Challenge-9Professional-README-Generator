@@ -24,7 +24,7 @@ function renderLicenseBadge(license) {
 function renderLicenseLink(license) {
   if (license == 'MIT'){
     return 'https://opensource.org/licenses/MIT'
-  } else if (liscense == 'APACHE'){
+  } else if (license == 'APACHE'){
     return 'https://opensource.org/licenses/Apache-2.0'
   } else if (license == 'GNU'){
     return 'https://opensource.org/licenses/GPL-3.0'
@@ -37,25 +37,59 @@ function renderLicenseLink(license) {
 }
 
 // TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+
+/* ---------------------
+In this block of funtion:
+
+The idea that I had was to create a variable that will store the badge first. 
+If input is blank and the user hit enter, it will return an empty string. Data will be store in empty variable.  
+I want to use the renderLicense...() Functions that comsume input about license choice.
+I want to create string literal, concatnating choices from renderLicense functions 
+
+------------------ */
 function renderLicenseSection(license) {
   let licenseBadge = ``
-  if (liscense == 'None'){
-    return ``
+  if (license == 'None'){
+    return 
   }
-  // loop over badges and links, string literal 
+  // loop over badges and links,  
   for (let i = 0; i < license.lentgh; i++){
-    // console.log(liscense[i])
-   let badge = renderLicenseBadge(license[i])
-   let badgeLink = renderLicenseLink(liscense[i])
-   licenseBadge += `![License](${badge}${badgeLink})\n`
+    console.log(license.lentgh)
+    console.log(license[i])
+  //  let badge = renderLicenseBadge(license[i])
+  //  let badgeLink = renderLicenseLink(license[i])
+  //  licenseBadge += `![License](${badge}${badgeLink})\n`
   }
-  return `## ${licenseBadge}`
+  // return `## ${licenseBadge}`
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
+  ${renderLicenseBadge(data.title)}
+
+  ## Description
+  ${data.discription}
+
+  ## Table of Contents
+
+  ## Installation
+
+  ## Usage
+
+  ## License
+  ${renderLicenseBadge(data.license)}
+  ${renderLicenseSection(data.license)}
+  ## Contribution 
+
+  ## Test
+
+  ## Questions
+
+  - Created By: ${data.user}
+  - GitHub: ${data.gitHub}
+  - Email: ${data.eMail}
+
 
 `;
 }
