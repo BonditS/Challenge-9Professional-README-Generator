@@ -72,14 +72,21 @@ function generateMarkdown(data) {
   ${data.discription}
 
   ## Table of Contents
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [License](#license)
+  - [Contribution](#contribution)
+  - [Test](#test)
+  - [Questions](questions)
 
   ## Installation
-
+  
   ## Usage
 
   ## License
   ${renderLicenseBadge(data.license)}
   ${renderLicenseSection(data.license)}
+
   ## Contribution 
 
   ## Test
@@ -89,7 +96,6 @@ function generateMarkdown(data) {
   - Created By: ${data.user}
   - GitHub: ${data.gitHub}
   - Email: ${data.eMail}
-
 
 `;
 }
