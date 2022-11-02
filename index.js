@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer')
 const fs = require('fs')
-const generateMD = require('./utils/generateMarkdown')
+const generateMD = require('./generateMarkdown')
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -19,6 +19,11 @@ const questions = [
         type: 'input',
         name: 'email',
         message: 'Enter your email account:'
+    },
+    {
+        type: 'input',
+        name: 'gitHub',
+        message: 'Enter your GitHub account'
     },
     {
         type:'input',

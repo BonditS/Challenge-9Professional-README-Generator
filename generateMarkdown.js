@@ -66,7 +66,7 @@ function renderLicenseSection(license) {
 function generateMarkdown(data) {
   return `# ${data.title}
   
-  ${renderLicenseBadge(data.title)}
+  ${renderLicenseBadge(data.license)}
 
   ## Description
   ${data.discription}
@@ -85,9 +85,9 @@ function generateMarkdown(data) {
   ${data.usage}
 
   ## License
-  ${renderLicenseBadge(data.license)}
+  
   ${renderLicenseSection(data.license)}
-
+  
   ## Contribution 
   ${data.contribution}
 
@@ -96,9 +96,9 @@ function generateMarkdown(data) {
 
   ## Questions
 
-  - Created By: ${data.user}
+  - Created By: ${data.userName}
   - GitHub: ${data.gitHub}
-  - Email: ${data.eMail}
+  - Email: ${data.email}
 `;
 }
 

@@ -1,5 +1,6 @@
-# README Generator
+# ReadMee!
   
+  ![MIT](https://img.shields.io/badge/License-MIT-brightgreen?style=flat-square)
 
   ## Description
   undefined
@@ -13,14 +14,14 @@
   - [Questions](questions)
 
   ## Installation
-  SO THAT I can quickly create a professional README for a new project
+  none
   ## Usage
   none
 
   ## License
-  ![MIT](https://img.shields.io/badge/License-MIT-brightgreen?style=flat-square)
+  
   ## 
-
+  
   ## Contribution 
   none
 
@@ -29,6 +30,6 @@
 
   ## Questions
 
-  - Created By: undefined
-  - GitHub: undefined
-  - Email: undefined
+  - Created By: bondit
+  - GitHub: bondti
+  - Email: bondit
