@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer')
 const fs = require('fs')
-const generateMD = require('./utils/generateMarkdown.js')
+const generateMD = require('./utils/generateMarkdown')
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -19,7 +19,7 @@ const questions = [
 // Promt for user 
 function userInput(){
 inquirer
-    .createPromptModule([
+    .promt([
         {
             type: 'input',
             name: 'userName',
@@ -66,25 +66,22 @@ inquirer
             name: 'test',
             message: questions[8]
         }
-
     ])
     
     .then((data) => {
-        writeToFile(data)
+        writeToFile(generateMD(data))
     })
 }
 
 // TODO: Create a function to write README file
-function writeToFile(data) {
-    fs.writeFile('README.md', data, (err)=>
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err)=>
     err ? console.error(err) : console('Success!'))
 }
 
 // TODO: Create a function to initialize app
 function init() {
     userInput()
-   
-
 }
 
 // Function call to initialize appn

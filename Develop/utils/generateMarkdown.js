@@ -10,7 +10,7 @@ function renderLicenseBadge(license) {
     return `![MIT](https://img.shields.io/badge/License-MIT-brightgreen?style=flat-square)`
   } else if (license == 'APACHE') {
     return `![APACHE](https://img.shields.io/badge/License-APACHE%202.0-brightgreen?style=flat-square)`
-  } else if (license == 'GPL') {
+  } else if (license == 'GNU') {
     return `![GNU](https://img.shields.io/badge/License-GNU%20v3.0-brightgreen?style=flat-square)`
   } else if (license == 'BSD') {
     return `![BSD](https://img.shields.io/badge/License-BSD%202%20Clause-brightgreen?style=flat-square)`
@@ -54,13 +54,11 @@ function renderLicenseSection(license) {
   }
   // loop over badges and links,  
   for (let i = 0; i < license.lentgh; i++){
-    console.log(license.lentgh)
-    console.log(license[i])
-  //  let badge = renderLicenseBadge(license[i])
-  //  let badgeLink = renderLicenseLink(license[i])
-  //  licenseBadge += `![License](${badge}${badgeLink})\n`
+   let badge = renderLicenseBadge(license[i])
+   let badgeLink = renderLicenseLink(license[i])
+   licenseBadge += `![License](${badge}${badgeLink})\n`
   }
-  // return `## ${licenseBadge}`
+  return `## ${licenseBadge}`
 }
 
 // TODO: Create a function to generate markdown for README
@@ -80,16 +78,19 @@ function generateMarkdown(data) {
   - [Questions](questions)
 
   ## Installation
-  
+  ${data.installation}
   ## Usage
+  ${data.usage}
 
   ## License
   ${renderLicenseBadge(data.license)}
   ${renderLicenseSection(data.license)}
 
   ## Contribution 
+  ${contribution}
 
   ## Test
+  ${data.test}
 
   ## Questions
 
