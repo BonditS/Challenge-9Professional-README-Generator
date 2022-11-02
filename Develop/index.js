@@ -5,83 +5,66 @@ const generateMD = require('./utils/generateMarkdown')
 
 // TODO: Create an array of questions for user input
 const questions = [
-    'What is your userName?',
-    'What is your GitHub Account?',
-    'Enter your email account:',
-    'Enter project description:',
-    'Enter installation instructions',
-    'Enter usage discription:',
-    'Please choose a license:',
-    'Enter contribution guidelines',
-    'Enter test instructions:',
+    {
+        type: 'input',
+        name: 'title',
+        message: 'What is the tile of your project?'
+    },
+    {
+        type: 'input',
+        name: 'userName',
+        message: 'What is your userName?'
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'Enter your email account:'
+    },
+    {
+        type:'input',
+        name:'description',
+        message: 'Enter project description:'
+    },
+    {
+        type: 'input',
+        name: 'installation',
+        message: 'Enter installation instructions'
+    },
+    {
+        type: 'input',
+        name: 'usage',
+        message: 'Enter usage discription:'
+    },
+    {
+        type: 'checkbox',
+        name: 'license',
+        message: 'Please choose a license:',
+        choices: ['None', 'MIT', 'APACHE', 'GNU', 'BSD']
+    },
+    {
+        type: 'input',
+        name: 'contribution',
+        message: 'Enter contribution guidelines'
+    },
+    {
+        type: 'input',
+        name: 'test',
+        message: 'Enter test instructions:'
+    }
 ];
-
-// Promt for user 
-function userInput(){
-inquirer
-    .promt([
-        {
-            type: 'input',
-            name: 'userName',
-            message: questions[0]
-        },
-        {
-            type: 'input',
-            name: 'gitHub',
-            questions: questions[1]        
-        },
-        {
-            type: 'input',
-            name: 'email',
-            message: questions[2]
-        },
-        {
-            type:'input',
-            name:'description',
-            message: questions[3]
-        },
-        {
-            type: 'input',
-            name: 'installation',
-            message: questions[4]
-        },
-        {
-            type: 'input',
-            name: 'usage',
-            message: questions[5]
-        },
-        {
-            type: 'checkbox',
-            name: 'license',
-            message: questions[6],
-            choices: ['None', 'MIT', 'APACHE', 'GNU', 'BSD']
-        },
-        {
-            type: 'input',
-            name: 'contribution',
-            message: questions[7]
-        },
-        {
-            type: 'input',
-            name: 'test',
-            message: questions[8]
-        }
-    ])
-    
-    .then((data) => {
-        writeToFile(generateMD(data))
-    })
-}
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, (err)=>
-    err ? console.error(err) : console('Success!'))
+    fs.writeFile(fileName, data, (err)=>{
+        err?console.log(err):console.log('Success!')
+    })
 }
 
 // TODO: Create a function to initialize app
 function init() {
-    userInput()
+    inquirer
+        .prompt(questions)
+        .then((data)=>{writeToFile(`README.md`, generateMD(data))})
 }
 
 // Function call to initialize appn

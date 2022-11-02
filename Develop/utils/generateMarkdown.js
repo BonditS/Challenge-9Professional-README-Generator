@@ -55,6 +55,7 @@ function renderLicenseSection(license) {
   // loop over badges and links,  
   for (let i = 0; i < license.lentgh; i++){
    let badge = renderLicenseBadge(license[i])
+   console.log(badge)
    let badgeLink = renderLicenseLink(license[i])
    licenseBadge += `![License](${badge}${badgeLink})\n`
   }
@@ -87,7 +88,7 @@ function generateMarkdown(data) {
   ${renderLicenseSection(data.license)}
 
   ## Contribution 
-  ${contribution}
+  ${data.contribution}
 
   ## Test
   ${data.test}
@@ -97,7 +98,6 @@ function generateMarkdown(data) {
   - Created By: ${data.user}
   - GitHub: ${data.gitHub}
   - Email: ${data.eMail}
-
 `;
 }
 
