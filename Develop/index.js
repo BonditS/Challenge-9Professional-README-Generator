@@ -16,11 +16,76 @@ const questions = [
     'Enter test instructions:',
 ];
 
+// Promt for user 
+function userInput(){
+inquirer
+    .createPromptModule([
+        {
+            type: 'input',
+            name: 'userName',
+            message: questions[0]
+        },
+        {
+            type: 'input',
+            name: 'gitHub',
+            questions: questions[1]        
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: questions[2]
+        },
+        {
+            type:'input',
+            name:'description',
+            message: questions[3]
+        },
+        {
+            type: 'input',
+            name: 'installation',
+            message: questions[4]
+        },
+        {
+            type: 'input',
+            name: 'usage',
+            message: questions[5]
+        },
+        {
+            type: 'checkbox',
+            name: 'license',
+            message: questions[6],
+            choices: ['None', 'MIT', 'APACHE', 'GNU', 'BSD']
+        },
+        {
+            type: 'input',
+            name: 'contribution',
+            message: questions[7]
+        },
+        {
+            type: 'input',
+            name: 'test',
+            message: questions[8]
+        }
+
+    ])
+    
+    .then((data) => {
+        writeToFile(data)
+    })
+}
+
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(data) {
+    fs.writeFile('README.md', data, (err)=>
+    err ? console.error(err) : console('Success!'))
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    userInput()
+   
 
-// Function call to initialize app
+}
+
+// Function call to initialize appn
 init();
