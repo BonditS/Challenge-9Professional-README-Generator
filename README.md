@@ -1,9 +1,9 @@
-# ReadMee!
+# README Generator
   
   ![MIT](https://img.shields.io/badge/License-MIT-brightgreen?style=flat-square)
 
   ## Description
-  undefined
+  An applicaiton that generate markdown text for project documentation
 
   ## Table of Contents
   - [Installation](#installation)
@@ -31,5 +31,5 @@
   ## Questions
 
   - Created By: bondit
-  - GitHub: bondti
-  - Email: bondit
+  - GitHub: BonditS
+  - Email: bondit@mail.com

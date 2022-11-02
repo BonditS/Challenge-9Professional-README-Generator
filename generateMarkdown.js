@@ -69,7 +69,7 @@ function generateMarkdown(data) {
   ${renderLicenseBadge(data.license)}
 
   ## Description
-  ${data.discription}
+  ${data.description}
 
   ## Table of Contents
   - [Installation](#installation)
