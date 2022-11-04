@@ -77,7 +77,8 @@ function generateMarkdown(data) {
   - [License](#license)
   - [Contribution](#contribution)
   - [Test](#test)
-  - [Questions](questions)
+  - [Questions](#questions)
+  - [Walkthrough](#walkthrough)
 
   ## Installation
   ${data.installation}
@@ -99,6 +100,9 @@ function generateMarkdown(data) {
   - Created By: ${data.userName}
   - GitHub: ${data.gitHub}
   - Email: ${data.email}
+
+  ## Walkthrough
+  ${data.video}
 `;
 }
 

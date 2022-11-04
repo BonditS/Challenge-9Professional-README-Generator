@@ -55,6 +55,11 @@ const questions = [
         type: 'input',
         name: 'test',
         message: 'Enter test instructions:'
+    },
+    {
+        type: 'input',
+        name: 'video',
+        message: 'Enter walkthrough video'
     }
 ];
 
